@@ -1,0 +1,75 @@
+/* 1️⃣ Tailwind Core Import */
+@import "tailwindcss";
+
+/* 2️⃣ Theme Layer (V4 Correct Way) */
+@theme {
+  /* Colors */
+  --color-ink: #161616;
+  --color-muted: #6b7280;
+  --color-bg: #f7f7f7;
+  --color-card: #ffffff;
+  --color-accent: #ff385c;
+  --color-accent-2: #f97316;
+
+  /* Radius */
+  --radius-lg: 16px;
+  --radius-md: 12px;
+}
+
+/* 3️⃣ Base Styles */
+@layer base {
+  body {
+    font-family: "DM Sans", "Inter", system-ui, -apple-system, sans-serif;
+    background: radial-gradient(
+        circle at 18% 20%,
+        color-mix(in oklab, var(--color-accent) 6%, transparent),
+        transparent 32%
+      ),
+      radial-gradient(
+        circle at 80% 10%,
+        color-mix(in oklab, var(--color-accent-2) 5%, transparent),
+        transparent 30%
+      ),
+      var(--color-bg);
+    color: var(--color-ink);
+    min-height: 100vh;
+  }
+}
+
+/* 4️⃣ Custom Utilities (Component‑like Classes) */
+@layer utilities {
+  /* Soft Card */
+  .soft-card {
+    @apply bg-card border border-neutral-200 rounded-[var(--radius-lg)];
+    box-shadow: 0 15px 35px rgba(17, 24, 39, 0.08);
+  }
+
+  /* Pill Badge */
+  .pill {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-sm font-semibold rounded-full;
+    background: color-mix(in oklab, var(--color-accent) 12%, white);
+    color: var(--color-accent);
+  }
+
+  /* Primary Button */
+  .button-primary {
+    background: linear-gradient(
+      120deg,
+      var(--color-accent),
+      color-mix(in oklab, var(--color-accent) 70%, white)
+    );
+
+    @apply text-white font-semibold rounded-[var(--radius-md)];
+    box-shadow: 0 12px 30px rgba(255, 56, 92, 0.35);
+  }
+
+  .button-primary:hover {
+    filter: brightness(1.03);
+  }
+
+  /* Ghost Button */
+  .button-ghost {
+    @apply bg-white text-ink font-semibold;
+    @apply border border-neutral-200 rounded-[var(--radius-md)];
+  }
+}
