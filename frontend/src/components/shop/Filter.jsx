@@ -103,7 +103,7 @@ export default function Filter() {
           <h4 className="font-medium text-sm mb-3 text-slate-700">Rating</h4>
           <div className="space-y-2">
             {ratingRanges.map((item) => (
-              <label className="flex items-center cursor-pointer">
+              <label key={item} className="flex items-center cursor-pointer">
                 <input
                   type="checkbox"
                   checked={filter.starRating == item}

@@ -13,7 +13,7 @@ export default function Shop() {
       <Filter />
       <div className="md:col-span-3">
         <Sort />
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading.state && (
             <ProductLoadingSkeleton count={6} loading={loading} />
           )}
