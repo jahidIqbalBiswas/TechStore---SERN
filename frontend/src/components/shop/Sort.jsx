@@ -10,7 +10,7 @@ export default function Sort() {
     <div className="flex items-center justify-between mb-6">
       <p className="text-slate-600"> Showing {products.length} products</p>
       <div className="flex items-center gap-2">
-        <label for="sort" className="text-sm font-medium text-slate-700">
+        <label htmlFor="sort" className="text-sm font-medium text-slate-700">
           Sort by:
         </label>
         <select
